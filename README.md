@@ -1,2 +1,2 @@
 # JRegulate
-A Plugin that monitors Copilot Usage Statistics
+A Plugin that monitors Copilot/GPT Usage Statistics

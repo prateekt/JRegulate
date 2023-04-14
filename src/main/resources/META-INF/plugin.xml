@@ -1,0 +1,41 @@
+<!-- Copyright 2000-2022 JetBrains s.r.o. and other contributors. Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file. -->
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+
+<idea-plugin>
+
+  <!-- Unique id for this plugin. Must stay constant for the life of the plugin. -->
+  <id>org.intellij.jregulator.impl</id>
+
+  <!-- Text to display as name on Settings | Plugin page -->
+  <name>JRegulator</name>
+
+  <!-- Product and plugin compatibility requirements -->
+  <depends>com.intellij.modules.platform</depends>
+
+  <!-- Text to display as description on Settings | Plugin page -->
+  <description>
+    <![CDATA[
+      Illustrates various basic Editor APIs. Requires at least project to be open, and a file open in the editor
+      to see the menu items this plugin adds to the editor popup menu.<br>Mouse over each of this plugin's menu items
+      to see hints in the lower left corner of the IDE.
+    ]]>
+  </description>
+  <change-notes>
+    <![CDATA[
+      <ul>
+        <li><b>2.0.0</b> Convert to Gradle-based plugin</li>
+        <li><b>1.0.0</b> Release 2019.1 and earlier.</li>
+      </ul>
+    ]]>
+  </change-notes>
+
+  <!-- Text to display as company information on Settings | Plugin page -->
+  <vendor url="https://plugins.jetbrains.com">IntelliJ Platform SDK</vendor>
+  <extensions defaultExtensionNs="com.intellij">
+    <editorActionHandler action="EditorTab" implementationClass="org.intellij.jregulator.impl.TabTracker"/>
+    <backspaceHandlerDelegate implementation="org.intellij.jregulator.impl.BackspaceTracker"/>
+    <typedHandler implementation="org.intellij.jregulator.impl.TypingTracker"/>
+    <enterHandlerDelegate implementation="org.intellij.jregulator.impl.EnterTracker"/>
+  </extensions>
+
+</idea-plugin>
